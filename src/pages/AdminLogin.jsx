@@ -17,7 +17,7 @@ const AdminLogin = () => {
       const user = userCredential.user;
       const role = await getUserRole(user.email);
       if (role === "admin") {
-        navigate("/admin-dashboard");
+        navigate("/admin/dashboard"); // Updated path
       } else {
         setError("You do not have admin access.");
         await auth.signOut();
