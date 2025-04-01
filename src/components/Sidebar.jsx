@@ -79,7 +79,7 @@ const Sidebar = () => {
       {/* User Profile Section */}
       <div className="p-4 flex items-center space-x-3 border-b">
         <img
-          src={currentUser?.photoURL || "https://via.placeholder.com/40"}
+          src={currentUser?.photoURL || "https://th.bing.com/th/id/OIP.mmjVD2F3Bcidm7tmMFalpQHaHa?rs=1&pid=ImgDetMain"}
           alt="Profile"
           className="w-10 h-10 rounded-full"
         />
