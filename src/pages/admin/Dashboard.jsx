@@ -734,7 +734,7 @@ const StatsCards = () => {
         changeIcon="fa-arrow-up"
         changeColor="text-green-500"
         subtext="+16 from last month"
-        color="bg-green-200"
+        color="bg-green-100"
       />
       <StatCard
         title="Job Applicant"
@@ -743,7 +743,7 @@ const StatsCards = () => {
         changeIcon="fa-arrow-up"
         changeColor="text-green-500"
         subtext="+32 from last month"
-        color="bg-green-200"
+        color="bg-green-100"
       />
       <StatCard
         title="Total Revenue"
@@ -752,7 +752,7 @@ const StatsCards = () => {
         changeIcon="fa-arrow-up"
         changeColor="text-green-500"
         subtext="+$3,834.00 from last month"
-        color="bg-green-200"
+        color="bg-green-100"
       />
       <StatCard
         title="Attendance Rate"
@@ -761,7 +761,7 @@ const StatsCards = () => {
         changeIcon="fa-arrow-down"
         changeColor="text-red-500"
         subtext="-6.4% from last month"
-        color="bg-red-200"
+        color="bg-red-100"
       />
     </div>
   );
@@ -881,7 +881,7 @@ const TaskSection = () => {
             <div className="flex items-center space-x-4">
               <h1 className="text-xl font-bold">Task</h1>
               <div className="flex space-x-2">
-                <button className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300"><i class="fas fa-th-large"></i> Kanban</button>
+                <button className="px-4 py-2 bg-blue-50 rounded hover:bg-gray-300"><i class="fas fa-th-large"></i> Kanban</button>
                 <button className="px-4 py-2 bg-gray-100 rounded hover:bg-gray-300">Table</button>
                 <button className="px-4 py-2 bg-gray-100 rounded hover:bg-gray-300">List View</button>
               </div>
