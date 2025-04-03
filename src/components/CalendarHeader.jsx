@@ -361,7 +361,7 @@ function CalendarHeader({
         </div>
       </div>
       
-      <div className="mt-3 text-sm text-gray-500 flex items-center">
+      {/* <div className="mt-3 text-sm text-gray-500 flex items-center">
         <div className="mr-4 flex items-center">
           <span className="w-3 h-3 bg-red-500 rounded-full inline-block mr-1"></span>
           <span>Weekends</span>
@@ -370,7 +370,7 @@ function CalendarHeader({
           <span className="w-3 h-3 bg-red-100 border border-red-500 rounded-full inline-block mr-1"></span>
           <span>Holidays</span>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
