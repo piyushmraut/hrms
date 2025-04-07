@@ -15,8 +15,11 @@
     "@fullcalendar/interaction": "^6.1.15",
     "@fullcalendar/react": "^6.1.15",
     "@fullcalendar/timegrid": "^6.1.15",
+    "@headlessui/react": "^2.2.1",
     "@heroicons/react": "^2.2.0",
     "@shadcn/ui": "^0.0.4",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
     "firebase": "^11.6.0",
     "framer-motion": "^12.6.3",
@@ -27,7 +30,9 @@
     "react-router-dom": "^7.4.1",
     "react-zoom-pan-pinch": "^3.7.0",
     "reactflow": "^11.11.4",
-    "recharts": "^2.15.1"
+    "recharts": "^2.15.1",
+    "tailwind-variants": "^1.0.0",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",

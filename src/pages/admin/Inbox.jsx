@@ -787,6 +787,18 @@ function Inbox() {
       attachments: ['expense_report.pdf', 'receipts.zip'],
     },
     {
+      id: 4,
+      from: 'john@company.com',
+      to: '',
+      subject: 'Project Proposal Draft',
+      content: 'This is a draft for the upcoming project proposal...',
+      date: '2025-04-04',
+      isStarred: false,
+      isRead: true,
+      folder: 'draft',
+      attachments: [],
+    },
+    {
       id: 5,
       from: 'support@service.com',
       to: 'john@company.com',
@@ -798,7 +810,7 @@ function Inbox() {
       folder: 'inbox',
       attachments: ['renewal_offer.pdf'],
     },
-    
+  
     {
       id: 7,
       from: 'john@company.com',
