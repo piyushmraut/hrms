@@ -391,6 +391,48 @@
 
 import React, { useState, useEffect } from 'react';
 
+// const TaskForm = ({ task, addTask, updateTask, onClose, projects, employees }) => {
+//   const [formData, setFormData] = useState({
+//     title: '',
+//     description: '',
+//     projectId: projects.length > 0 ? projects[0].id : '',
+//     assignee: employees.length > 0 ? employees[0].id : '',
+//     status: 'Not Started',
+//     priority: 'Medium',
+//     dueDate: '',
+//   });
+
+//   useEffect(() => {
+//     if (task) {
+//       setFormData(task);
+//     } else {
+//       setFormData({
+//         title: '',
+//         description: '',
+//         projectId: projects.length > 0 ? projects[0].id : '',
+//         assignee: employees.length > 0 ? employees[0].id : '',
+//         status: 'Not Started',
+//         priority: 'Medium',
+//         dueDate: '',
+//       });
+//     }
+//   }, [task, projects, employees]);
+
+//   const handleChange = (e) => {
+//     const { name, value } = e.target;
+//     setFormData({ ...formData, [name]: value });
+//   };
+
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+//     if (task) {
+//       updateTask({ ...formData, id: task.id });
+//     } else {
+//       addTask(formData);
+//     }
+//     onClose();
+//   };
+
 const TaskForm = ({ task, addTask, updateTask, onClose, projects, employees }) => {
   const [formData, setFormData] = useState({
     title: '',
@@ -420,7 +462,11 @@ const TaskForm = ({ task, addTask, updateTask, onClose, projects, employees }) =
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    if (name === 'projectId' || name === 'assignee') {
+      setFormData({ ...formData, [name]: parseInt(value, 10) });
+    } else {
+      setFormData({ ...formData, [name]: value });
+    }
   };
 
   const handleSubmit = (e) => {
@@ -546,7 +592,6 @@ const TaskForm = ({ task, addTask, updateTask, onClose, projects, employees }) =
                     <option value="Low">Low</option>
                     <option value="Medium">Medium</option>
                     <option value="High">High</option>
-                    <option value="Critical">Critical</option>
                   </select>
                 </div>
               </div>
