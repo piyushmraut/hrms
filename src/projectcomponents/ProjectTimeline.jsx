@@ -134,14 +134,11 @@ const ProjectTimeline = ({ projects }) => {
   };
 
   return (
-    <div className="relative h-auto pb-8 overflow-x-auto bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg shadow-md p-6">
-      <h2 className="text-xl font-bold mb-6 text-gray-800 flex items-center">
-        <Calendar className="mr-2 text-indigo-600" />
-        Project Timeline
-      </h2>
+    <div className="relative h-auto pb-8 overflow-x-auto bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg shadow-md p-6 border-2 border-dotted border-violet-600">
+      
       
       {/* Month markers */}
-      <div className="absolute top-16 left-0 right-0 h-10 flex">
+      <div className="absolute top-10 left-0 right-0 h-10 flex">
         {monthMarkers.map((date, index) => {
           const position = ((date - minDate) / (maxDate - minDate)) * 100;
           return (
