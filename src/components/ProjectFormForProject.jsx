@@ -201,7 +201,7 @@ import {
   Clock
 } from 'lucide-react';
 
-const ProjectForm = ({ project, addProject, updateProject, onClose, employees, teams }) => {
+const ProjectFormForProject = ({ project, addProject, updateProject, onClose, employees, teams }) => {
   const [formData, setFormData] = useState({
     name: '',
     description: '',
@@ -519,5 +519,5 @@ const ProjectForm = ({ project, addProject, updateProject, onClose, employees, t
   );
 };
 
-export default ProjectForm;
+export default ProjectFormForProject;
 

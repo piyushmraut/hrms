@@ -205,7 +205,7 @@ import React, { useState, useEffect } from 'react';
 import { Calendar, User, CheckCircle, Clock, Bookmark, FileText, X, Save } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-const TaskForm = ({ task, addTask, updateTask, onClose, projects, employees }) => {
+const TaskFormForProject = ({ task, addTask, updateTask, onClose, projects, employees }) => {
   const [formData, setFormData] = useState({
     title: '',
     description: '',
@@ -492,4 +492,4 @@ const TaskForm = ({ task, addTask, updateTask, onClose, projects, employees }) =
   );
 };
 
-export default TaskForm;
+export default TaskFormForProject;

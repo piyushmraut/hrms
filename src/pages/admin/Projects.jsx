@@ -29,16 +29,16 @@ import {
   UserPlus,
   UsersRound
 } from 'lucide-react';
-import ProjectsTable from '../../projectcomponents/ProjectsTable';
-import ProjectsCardView from '../../projectcomponents/ProjectsCardView';
-import ProjectForm from '../../projectcomponents/ProjectForm';
-import TaskForm from '../../projectcomponents/TaskForm';
-import EmployeeForm from '../../projectcomponents/EmployeeForm';
-import TeamForm from '../../projectcomponents/TeamForm';
-import StatsOverview from '../../projectcomponents/StatsOverview';
-import ProjectTimeline from '../../projectcomponents/ProjectTimeline';
-import StatusPieChart from '../../projectcomponents/StatusPieChart';
-import PriorityChart from '../../projectcomponents/PriorityChart';
+import ProjectsTable from '../../components/ProjectsTable';
+import ProjectsCardView from '../../components/ProjectsCardView';
+import ProjectForm from '../../components/ProjectFormForProject';
+import TaskForm from '../../components/TaskFormForProject';
+import EmployeeForm from '../../components//EmployeeForm';
+import TeamForm from '../../components//TeamForm';
+import StatsOverview from '../../components/StatsOverview';
+import ProjectTimeline from '../../components/ProjectTimeline';
+import StatusPieChart from '../../components/StatusPieChart';
+import PriorityChart from '../../components/PriorityChart';
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
