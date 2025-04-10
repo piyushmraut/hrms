@@ -138,7 +138,8 @@ const Projects = () => {
 
     setProjects(loadData('projects', dummyProjects));
     setTasks(loadData('tasks', dummyTasks));
-    setEmployees(loadData('employees', dummyEmployees));
+    // setEmployees(loadData('employees', dummyEmployees));
+    setEmployees(loadData('projectEmployees', dummyEmployees));
     setTeams(loadData('teams', dummyTeams));
   }, []);
 
@@ -154,7 +155,7 @@ const Projects = () => {
 
     saveData('projects', projects);
     saveData('tasks', tasks);
-    saveData('employees', employees);
+    saveData('projectEmployees', employees);
     saveData('teams', teams);
   }, [projects, tasks, employees, teams]);
 

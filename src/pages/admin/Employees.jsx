@@ -1025,9 +1025,9 @@ function Employees() {
   // Load data from local storage when component mounts
   useEffect(() => {
     const savedEmployees = localStorage.getItem('employees');
-    if (savedEmployees) {
+    
       setEmployees(JSON.parse(savedEmployees));
-    } else {
+    
       // Sample hierarchical data
       const sampleEmployees = [
         { 
@@ -1176,7 +1176,7 @@ function Employees() {
       ];
       setEmployees(sampleEmployees);
       localStorage.setItem('employees', JSON.stringify(sampleEmployees));
-    }
+    
   }, []);
 
   // Save data to local storage whenever employees state changes
