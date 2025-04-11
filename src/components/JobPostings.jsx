@@ -1246,18 +1246,9 @@ const JobPostings = () => {
   //   </div>
   // );
   return (
-    <div className="bg-gray-50 p-6 rounded-xl">
+    <div className="bg-gray-50 p-6 rounded-xl border-solid border-violet-600 border-2">
       <div className="flex justify-between items-center mb-8">
         <div className="flex items-center">
-          <motion.div
-            initial={{ rotate: 0 }}
-            animate={{ rotate: 360 }}
-            transition={{ duration: 0.8, ease: "easeInOut" }}
-            className="mr-3 text-blue-600"
-          >
-            <Briefcase size={28} />
-          </motion.div>
-          <h3 className="text-2xl font-bold text-gray-800">Job Postings</h3>
         </div>
         <motion.button
           whileHover={{ scale: 1.05 }}
@@ -1275,7 +1266,7 @@ const JobPostings = () => {
           <motion.div
             key={job.id}
             whileHover={{ y: -5, boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1)" }}
-            className="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100"
+            className="bg-white rounded-xl shadow-sm overflow-hidden border-dotted border-2 border-blue-600"
           >
             <div className="p-5">
               <div className="flex justify-between items-start mb-4">
