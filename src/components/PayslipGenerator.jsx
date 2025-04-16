@@ -1,3 +1,5 @@
+
+
 // import React, { useState, useEffect } from 'react';
 // import { FiSearch, FiDownload, FiPrinter, FiMail, FiCalendar } from 'react-icons/fi';
 
@@ -8,97 +10,16 @@
 //   const [selectedPayslip, setSelectedPayslip] = useState(null);
 //   const [isViewModalOpen, setIsViewModalOpen] = useState(false);
 
-//   // Simulated payslip data
-//   useEffect(() => {
-//     const dummyPayslips = [
-//       { 
-//         id: 1, 
-//         employeeId: 'EMP001', 
-//         name: 'John Doe', 
-//         department: 'Engineering', 
-//         position: 'Software Engineer',
-//         period: 'June 2023',
-//         issueDate: '2023-06-30',
-//         basicSalary: 7500,
-//         allowances: 1500,
-//         overtime: 500,
-//         bonuses: 1000,
-//         deductions: 500,
-//         tax: 1125,
-//         netSalary: 8875,
-//         status: 'Paid'
-//       },
-//       { 
-//         id: 2, 
-//         employeeId: 'EMP002', 
-//         name: 'Jane Smith', 
-//         department: 'Marketing', 
-//         position: 'Marketing Manager',
-//         period: 'June 2023',
-//         issueDate: '2023-06-30',
-//         basicSalary: 8500,
-//         allowances: 2000,
-//         overtime: 300,
-//         bonuses: 1500,
-//         deductions: 700,
-//         tax: 1530,
-//         netSalary: 10070,
-//         status: 'Paid'
-//       },
-//       { 
-//         id: 3, 
-//         employeeId: 'EMP003', 
-//         name: 'Robert Johnson', 
-//         department: 'HR', 
-//         position: 'HR Specialist',
-//         period: 'June 2023',
-//         issueDate: '2023-06-30',
-//         basicSalary: 6500,
-//         allowances: 1200,
-//         overtime: 200,
-//         bonuses: 800,
-//         deductions: 400,
-//         tax: 780,
-//         netSalary: 7520,
-//         status: 'Paid'
-//       },
-//       { 
-//         id: 4, 
-//         employeeId: 'EMP004', 
-//         name: 'Emily Davis', 
-//         department: 'Finance', 
-//         position: 'Accountant',
-//         period: 'May 2023',
-//         issueDate: '2023-05-31',
-//         basicSalary: 7000,
-//         allowances: 1300,
-//         overtime: 400,
-//         bonuses: 900,
-//         deductions: 450,
-//         tax: 910,
-//         netSalary: 8240,
-//         status: 'Paid'
-//       },
-//       { 
-//         id: 5, 
-//         employeeId: 'EMP005', 
-//         name: 'Michael Wilson', 
-//         department: 'Engineering', 
-//         position: 'Senior Developer',
-//         period: 'May 2023',
-//         issueDate: '2023-05-31',
-//         basicSalary: 9000,
-//         allowances: 2500,
-//         overtime: 600,
-//         bonuses: 2000,
-//         deductions: 800,
-//         tax: 1800,
-//         netSalary: 11500,
-//         status: 'Paid'
-//       },
-//     ];
-//     setPayslips(dummyPayslips);
-//   }, []);
+// useEffect(() => {
+//   const storedPayslips = localStorage.getItem('payroll_payslips');
+//   if (storedPayslips) {
+//     const parsedPayslips = JSON.parse(storedPayslips);
+//     console.log('Payslips from localStorage:', parsedPayslips);
+//     setPayslips(parsedPayslips);
+//   } else {
+//     setPayslips([]);
+//   }
+// }, []);
 
 //   const handleSearch = (e) => {
 //     setSearchTerm(e.target.value);
@@ -116,17 +37,14 @@
 //   };
 
 //   const handleDownloadPayslip = (payslipId) => {
-//     // In a real app, this would download the payslip PDF
 //     alert(`Downloading payslip ${payslipId}`);
 //   };
 
 //   const handlePrintPayslip = (payslipId) => {
-//     // In a real app, this would print the payslip
 //     alert(`Printing payslip ${payslipId}`);
 //   };
 
 //   const handleEmailPayslip = (payslipId) => {
-//     // In a real app, this would email the payslip
 //     alert(`Emailing payslip ${payslipId}`);
 //   };
 
@@ -136,7 +54,6 @@
 //     <div className="p-6">
 //       <h1 className="text-2xl font-bold text-gray-800 mb-6">Payslip Generator</h1>
       
-//       {/* Search and Filter */}
 //       <div className="bg-white rounded-lg shadow p-4 mb-6">
 //         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
 //           <div className="relative flex-1">
@@ -163,14 +80,10 @@
 //                 ))}
 //               </select>
 //             </div>
-//             <button className="flex items-center gap-2 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700">
-//               Generate New Payslips
-//             </button>
 //           </div>
 //         </div>
 //       </div>
 
-//       {/* Payslips Table */}
 //       <div className="bg-white rounded-lg shadow overflow-hidden">
 //         <div className="overflow-x-auto">
 //           <table className="min-w-full divide-y divide-gray-200">
@@ -237,7 +150,6 @@
 //         </div>
 //       </div>
 
-//       {/* View Payslip Modal */}
 //       {isViewModalOpen && selectedPayslip && (
 //         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
 //           <div className="bg-white rounded-lg shadow-xl w-full max-w-4xl">
@@ -247,11 +159,10 @@
 //                 onClick={() => setIsViewModalOpen(false)}
 //                 className="text-gray-500 hover:text-gray-700"
 //               >
-//                 &times;
+//                 ×
 //               </button>
 //             </div>
 //             <div className="p-6">
-//               {/* Payslip Header */}
 //               <div className="flex justify-between items-start mb-8">
 //                 <div>
 //                   <h1 className="text-2xl font-bold text-gray-800">ABC Company</h1>
@@ -264,7 +175,6 @@
 //                 </div>
 //               </div>
 
-//               {/* Employee and Period Info */}
 //               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
 //                 <div className="bg-gray-50 p-4 rounded-lg">
 //                   <h3 className="text-sm font-medium text-gray-500 mb-2">Employee Information</h3>
@@ -283,7 +193,6 @@
 //                 </div>
 //               </div>
 
-//               {/* Earnings and Deductions */}
 //               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
 //                 <div>
 //                   <h3 className="text-lg font-medium text-gray-800 mb-3">Earnings</h3>
@@ -299,15 +208,15 @@
 //                       </tr>
 //                       <tr>
 //                         <td className="py-2 text-gray-600">Overtime</td>
-//                         <td className="py-2 text-right font-medium">${selectedPayslip.overtime.toLocaleString()}</td>
+//                         <td className="py-2 text-right font-medium">${(selectedPayslip.overtime || 0).toLocaleString()}</td>
 //                       </tr>
 //                       <tr>
 //                         <td className="py-2 text-gray-600">Bonuses</td>
-//                         <td className="py-2 text-right font-medium">${selectedPayslip.bonuses.toLocaleString()}</td>
+//                         <td className="py-2 text-right font-medium">${(selectedPayslip.bonuses || 0).toLocaleString()}</td>
 //                       </tr>
 //                       <tr className="bg-gray-50">
 //                         <td className="py-2 font-medium">Total Earnings</td>
-//                         <td className="py-2 text-right font-medium">${(selectedPayslip.basicSalary + selectedPayslip.allowances + selectedPayslip.overtime + selectedPayslip.bonuses).toLocaleString()}</td>
+//                         <td className="py-2 text-right font-medium">${(selectedPayslip.basicSalary + selectedPayslip.allowances + (selectedPayslip.overtime || 0) + (selectedPayslip.bonuses || 0)).toLocaleString()}</td>
 //                       </tr>
 //                     </tbody>
 //                   </table>
@@ -333,7 +242,6 @@
 //                 </div>
 //               </div>
 
-//               {/* Net Pay */}
 //               <div className="bg-blue-50 p-4 rounded-lg mb-6">
 //                 <div className="flex justify-between items-center">
 //                   <h3 className="text-lg font-medium text-blue-800">Net Pay</h3>
@@ -341,12 +249,11 @@
 //                 </div>
 //               </div>
 
-//               {/* Bank Details */}
 //               <div className="bg-gray-50 p-4 rounded-lg">
 //                 <h3 className="text-sm font-medium text-gray-500 mb-2">Bank Details</h3>
-//                 <p className="text-gray-600">Bank Name: ABC Bank</p>
-//                 <p className="text-gray-600">Account Number: ****1234</p>
-//                 <p className="text-gray-600">IFSC Code: ABCB0001234</p>
+//                 <p className="text-gray-600">Bank Name: {selectedPayslip.bankDetails.bankName}</p>
+//                 <p className="text-gray-600">Account Number: {selectedPayslip.bankDetails.accountNumber}</p>
+//                 <p className="text-gray-600">IFSC Code: {selectedPayslip.bankDetails.ifscCode}</p>
 //               </div>
 //             </div>
 //             <div className="px-6 py-4 border-t border-gray-200 flex justify-end gap-3">
@@ -383,6 +290,8 @@
 
 import React, { useState, useEffect } from 'react';
 import { FiSearch, FiDownload, FiPrinter, FiMail, FiCalendar } from 'react-icons/fi';
+import { jsPDF } from 'jspdf';
+import autoTable from 'jspdf-autotable';
 
 const PayslipGenerator = () => {
   const [payslips, setPayslips] = useState([]);
@@ -391,16 +300,16 @@ const PayslipGenerator = () => {
   const [selectedPayslip, setSelectedPayslip] = useState(null);
   const [isViewModalOpen, setIsViewModalOpen] = useState(false);
 
-useEffect(() => {
-  const storedPayslips = localStorage.getItem('payroll_payslips');
-  if (storedPayslips) {
-    const parsedPayslips = JSON.parse(storedPayslips);
-    console.log('Payslips from localStorage:', parsedPayslips);
-    setPayslips(parsedPayslips);
-  } else {
-    setPayslips([]);
-  }
-}, []);
+  useEffect(() => {
+    const storedPayslips = localStorage.getItem('payroll_payslips');
+    if (storedPayslips) {
+      const parsedPayslips = JSON.parse(storedPayslips);
+      console.log('Payslips from localStorage:', parsedPayslips);
+      setPayslips(parsedPayslips);
+    } else {
+      setPayslips([]);
+    }
+  }, []);
 
   const handleSearch = (e) => {
     setSearchTerm(e.target.value);
@@ -417,10 +326,230 @@ useEffect(() => {
     setIsViewModalOpen(true);
   };
 
-  const handleDownloadPayslip = (payslipId) => {
-    alert(`Downloading payslip ${payslipId}`);
-  };
+  // const handleDownloadPayslip = (payslip) => {
+  //   // Initialize jsPDF with the autotable plugin
+  //   const doc = new jsPDF();
+    
+  //   // Set document properties
+  //   doc.setProperties({
+  //     title: `Payslip - ${payslip.name} - ${payslip.period}`,
+  //     subject: 'Employee Payslip',
+  //     author: 'ABC Company',
+  //   });
 
+  //   // Company Information
+  //   doc.setFontSize(18);
+  //   doc.setFont('helvetica', 'bold');
+  //   doc.text('ABC Company', 105, 20, { align: 'center' });
+  //   doc.setFontSize(12);
+  //   doc.setFont('helvetica', 'normal');
+  //   doc.text('123 Business Street, City, Country', 105, 28, { align: 'center' });
+    
+  //   // Payslip Header
+  //   doc.setFontSize(16);
+  //   doc.setFont('helvetica', 'bold');
+  //   doc.text('PAYSLIP', 105, 40, { align: 'center' });
+  //   doc.setFontSize(12);
+  //   doc.setFont('helvetica', 'normal');
+  //   doc.text(`#${payslip.id.toString().padStart(5, '0')}`, 160, 40);
+  //   doc.text(`Issued: ${payslip.issueDate}`, 160, 45);
+    
+  //   // Separator Line
+  //   doc.setDrawColor(200, 200, 200);
+  //   doc.line(20, 50, 190, 50);
+    
+  //   // Employee Information
+  //   doc.setFontSize(14);
+  //   doc.setFont('helvetica', 'bold');
+  //   doc.text('Employee Information', 20, 60);
+  //   doc.setFontSize(12);
+  //   doc.setFont('helvetica', 'normal');
+  //   doc.text(`Name: ${payslip.name}`, 20, 70);
+  //   doc.text(`ID: ${payslip.employeeId}`, 20, 78);
+  //   doc.text(`Department: ${payslip.department}`, 20, 86);
+  //   doc.text(`Position: ${payslip.position}`, 20, 94);
+    
+  //   // Payroll Information
+  //   doc.setFontSize(14);
+  //   doc.setFont('helvetica', 'bold');
+  //   doc.text('Payroll Information', 20, 104);
+  //   doc.setFontSize(12);
+  //   doc.setFont('helvetica', 'normal');
+  //   doc.text(`Pay Period: ${payslip.period}`, 20, 114);
+  //   doc.text(`Payment Date: ${payslip.issueDate}`, 20, 122);
+  //   doc.text(`Status: ${payslip.status}`, 20, 130);
+    
+  //   // Earnings Table
+  //   const earningsData = [
+  //     ['Basic Salary', `$${payslip.basicSalary.toLocaleString()}`],
+  //     ['Allowances', `$${payslip.allowances.toLocaleString()}`],
+  //     ['Overtime', `$${(payslip.overtime || 0).toLocaleString()}`],
+  //     ['Bonuses', `$${(payslip.bonuses || 0).toLocaleString()}`],
+  //     ['Total Earnings', `$${(payslip.basicSalary + payslip.allowances + (payslip.overtime || 0) + (payslip.bonuses || 0)).toLocaleString()}`]
+  //   ];
+    
+  //   doc.autoTable({
+  //     startY: 140,
+  //     head: [['Earnings', 'Amount']],
+  //     body: earningsData,
+  //     theme: 'grid',
+  //     headStyles: {
+  //       fillColor: [41, 128, 185],
+  //       textColor: 255,
+  //       fontStyle: 'bold'
+  //     },
+  //     styles: {
+  //       cellPadding: 3,
+  //       fontSize: 10,
+  //     },
+  //     columnStyles: {
+  //       1: { cellWidth: 'auto', halign: 'right' }
+  //     }
+  //   });
+    
+  //   // Deductions Table
+  //   const deductionsData = [
+  //     ['Tax', `$${payslip.tax.toLocaleString()}`],
+  //     ['Other Deductions', `$${payslip.deductions.toLocaleString()}`],
+  //     ['Total Deductions', `$${(payslip.tax + payslip.deductions).toLocaleString()}`]
+  //   ];
+    
+  //   doc.autoTable({
+  //     startY: doc.lastAutoTable.finalY + 10,
+  //     head: [['Deductions', 'Amount']],
+  //     body: deductionsData,
+  //     theme: 'grid',
+  //     headStyles: {
+  //       fillColor: [41, 128, 185],
+  //       textColor: 255,
+  //       fontStyle: 'bold'
+  //     },
+  //     styles: {
+  //       cellPadding: 3,
+  //       fontSize: 10,
+  //     },
+  //     columnStyles: {
+  //       1: { cellWidth: 'auto', halign: 'right' }
+  //     }
+  //   });
+    
+  //   // Net Pay
+  //   doc.setFontSize(16);
+  //   doc.setFont('helvetica', 'bold');
+  //   doc.setTextColor(41, 128, 185);
+  //   doc.text(`Net Pay: $${payslip.netSalary.toLocaleString()}`, 20, doc.lastAutoTable.finalY + 20);
+  //   doc.setTextColor(0, 0, 0);
+    
+  //   // Bank Details
+  //   doc.setFontSize(12);
+  //   doc.setFont('helvetica', 'bold');
+  //   doc.text('Bank Details', 20, doc.lastAutoTable.finalY + 40);
+  //   doc.setFont('helvetica', 'normal');
+  //   doc.text(`Bank Name: ${payslip.bankDetails.bankName}`, 20, doc.lastAutoTable.finalY + 48);
+  //   doc.text(`Account Number: ${payslip.bankDetails.accountNumber}`, 20, doc.lastAutoTable.finalY + 56);
+  //   doc.text(`IFSC Code: ${payslip.bankDetails.ifscCode}`, 20, doc.lastAutoTable.finalY + 64);
+    
+  //   // Footer
+  //   doc.setFontSize(10);
+  //   doc.text('This is a computer generated payslip. No signature required.', 105, 285, { align: 'center' });
+    
+  //   // Save the PDF
+  //   doc.save(`payslip_${payslip.employeeId}_${payslip.period.replace(' ', '_')}.pdf`);
+  // };
+
+  const handleDownloadPayslip = (payslip) => {
+    // Initialize jsPDF
+    const doc = new jsPDF();
+    
+    // Add company header
+    doc.setFontSize(18);
+    doc.setFont('helvetica', 'bold');
+    doc.text('ABC Company', 105, 20, { align: 'center' });
+    doc.setFontSize(12);
+    doc.setFont('helvetica', 'normal');
+    doc.text('123 Business Street, City, Country', 105, 28, { align: 'center' });
+    
+    // Add payslip title
+    doc.setFontSize(16);
+    doc.setFont('helvetica', 'bold');
+    doc.text('PAYSLIP', 105, 40, { align: 'center' });
+    doc.setFontSize(12);
+    doc.text(`#${payslip.id.toString().padStart(5, '0')}`, 160, 40);
+    doc.text(`Issued: ${payslip.issueDate}`, 160, 45);
+    
+    // Add employee information
+    doc.setFontSize(14);
+    doc.text('Employee Information', 20, 60);
+    doc.setFontSize(12);
+    doc.text(`Name: ${payslip.name}`, 20, 70);
+    doc.text(`ID: ${payslip.employeeId}`, 20, 78);
+    doc.text(`Department: ${payslip.department}`, 20, 86);
+    doc.text(`Position: ${payslip.position}`, 20, 94);
+    
+    // Add payroll information
+    doc.text('Payroll Information', 20, 104);
+    doc.text(`Pay Period: ${payslip.period}`, 20, 114);
+    doc.text(`Payment Date: ${payslip.issueDate}`, 20, 122);
+    doc.text(`Status: ${payslip.status}`, 20, 130);
+    
+    // Earnings table
+    autoTable(doc, {
+      startY: 140,
+      head: [['Earnings', 'Amount']],
+      body: [
+        ['Basic Salary', `$${payslip.basicSalary.toLocaleString()}`],
+        ['Allowances', `$${payslip.allowances.toLocaleString()}`],
+        ['Overtime', `$${(payslip.overtime || 0).toLocaleString()}`],
+        ['Bonuses', `$${(payslip.bonuses || 0).toLocaleString()}`],
+        ['Total Earnings', `$${(payslip.basicSalary + payslip.allowances + (payslip.overtime || 0) + (payslip.bonuses || 0)).toLocaleString()}`]
+      ],
+      theme: 'grid',
+      headStyles: {
+        fillColor: [41, 128, 185],
+        textColor: 255,
+        fontStyle: 'bold'
+      },
+      columnStyles: {
+        1: { halign: 'right' }
+      }
+    });
+    
+    // Deductions table
+    autoTable(doc, {
+      startY: doc.lastAutoTable.finalY + 10,
+      head: [['Deductions', 'Amount']],
+      body: [
+        ['Tax', `$${payslip.tax.toLocaleString()}`],
+        ['Other Deductions', `$${payslip.deductions.toLocaleString()}`],
+        ['Total Deductions', `$${(payslip.tax + payslip.deductions).toLocaleString()}`]
+      ],
+      theme: 'grid',
+      headStyles: {
+        fillColor: [41, 128, 185],
+        textColor: 255,
+        fontStyle: 'bold'
+      },
+      columnStyles: {
+        1: { halign: 'right' }
+      }
+    });
+    
+    // Net pay
+    doc.setFontSize(16);
+    doc.setTextColor(41, 128, 185);
+    doc.text(`Net Pay: $${payslip.netSalary.toLocaleString()}`, 20, doc.lastAutoTable.finalY + 20);
+    
+    // Bank details
+    doc.setTextColor(0, 0, 0);
+    doc.setFontSize(12);
+    doc.text('Bank Details', 20, doc.lastAutoTable.finalY + 40);
+    doc.text(`Bank Name: ${payslip.bankDetails.bankName}`, 20, doc.lastAutoTable.finalY + 48);
+    doc.text(`Account Number: ${payslip.bankDetails.accountNumber}`, 20, doc.lastAutoTable.finalY + 56);
+    doc.text(`IFSC Code: ${payslip.bankDetails.ifscCode}`, 20, doc.lastAutoTable.finalY + 64);
+    
+    // Save the PDF
+    doc.save(`payslip_${payslip.employeeId}_${payslip.period.replace(' ', '_')}.pdf`);
+  };
   const handlePrintPayslip = (payslipId) => {
     alert(`Printing payslip ${payslipId}`);
   };
@@ -502,7 +631,7 @@ useEffect(() => {
                         View
                       </button>
                       <button 
-                        onClick={() => handleDownloadPayslip(payslip.id)}
+                        onClick={() => handleDownloadPayslip(payslip)}
                         className="text-gray-600 hover:text-gray-800"
                         title="Download"
                       >
@@ -646,7 +775,7 @@ useEffect(() => {
                 Print
               </button>
               <button
-                onClick={() => handleDownloadPayslip(selectedPayslip.id)}
+                onClick={() => handleDownloadPayslip(selectedPayslip)}
                 className="flex items-center gap-2 bg-white border border-gray-300 text-gray-700 py-2 px-4 rounded-lg hover:bg-gray-50"
               >
                 <FiDownload />
