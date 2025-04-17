@@ -1865,7 +1865,7 @@ const Attendance = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="bg-white p-6 rounded-xl shadow-lg border border-gray-100"
+            className="bg-white p-6 rounded-xl shadow-lg border border-violet-700"
           >
             <div className="flex items-center mb-4">
               <div className="p-2 rounded-lg bg-green-50 mr-3">
@@ -1920,7 +1920,7 @@ const Attendance = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="bg-white p-6 rounded-xl shadow-lg border border-gray-100"
+            className="bg-white p-6 rounded-xl shadow-lg border border-violet-700"
           >
             <div className="flex items-center mb-4">
               <div className="p-2 rounded-lg bg-blue-50 mr-3">
@@ -1980,7 +1980,7 @@ const Attendance = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden"
+          className="bg-white rounded-xl shadow-lg border border-orange-700 overflow-hidden"
         >
           <div className="overflow-x-auto">
             <table className="min-w-full divide-y divide-gray-200">
@@ -2420,13 +2420,13 @@ const Attendance = () => {
           className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8"
         >
           <div>
-            <h1 className="text-3xl font-bold text-gray-800">Attendance Management</h1>
+            <h1 className="text-3xl font-bold text-indigo-800">Attendance Management</h1>
             <p className="text-gray-600 mt-1">Track and analyze employee attendance patterns</p>
           </div>
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="mt-4 md:mt-0 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white py-2 px-6 rounded-lg shadow-md flex items-center transition-all duration-300"
+            className="mt-4 md:mt-0 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white py-2 px-6 rounded-lg shadow-md flex items-center transition-all duration-300"
             onClick={exportToExcel}
           >
             <FiDownload className="mr-2" />
@@ -2562,7 +2562,7 @@ const Attendance = () => {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="grid grid-cols-1 md:grid-cols-4 gap-5 mb-8"
         >
-          <div className="bg-white rounded-xl shadow-lg p-5 border border-gray-100 hover:shadow-md transition-shadow">
+          <div className=" rounded-xl shadow-lg p-5 bg-indigo-50 border border-indigo-500 hover:bg-indigo-100 text-indigo-600 hover:shadow-md transition-shadow">
             <div className="flex items-center justify-between">
               <div>
                 <h3 className="text-sm font-medium text-gray-500">Total Records</h3>
@@ -2574,7 +2574,7 @@ const Attendance = () => {
             </div>
           </div>
           
-          <div className="bg-white rounded-xl shadow-lg p-5 border border-gray-100 hover:shadow-md transition-shadow">
+          <div className=" rounded-xl shadow-lg p-5 bg-emerald-50 border border-emerald-500 hover:bg-emerald-100 text-emerald-600 hover:shadow-md transition-shadow">
             <div className="flex items-center justify-between">
               <div>
                 <h3 className="text-sm font-medium text-gray-500">Present</h3>
@@ -2588,7 +2588,7 @@ const Attendance = () => {
             </div>
           </div>
           
-          <div className="bg-white rounded-xl shadow-lg p-5 border border-gray-100 hover:shadow-md transition-shadow">
+          <div className=" rounded-xl shadow-lg p-5 bg-amber-50 border border-amber-500 hover:bg-amber-100 text-amber-600 hover:shadow-md transition-shadow">
             <div className="flex items-center justify-between">
               <div>
                 <h3 className="text-sm font-medium text-gray-500">Late</h3>
@@ -2602,7 +2602,7 @@ const Attendance = () => {
             </div>
           </div>
           
-          <div className="bg-white rounded-xl shadow-lg p-5 border border-gray-100 hover:shadow-md transition-shadow">
+          <div className="bg-red-50 border-red-600 border rounded-xl shadow-lg p-5 border border-gray-100 hover:shadow-md transition-shadow">
             <div className="flex items-center justify-between">
               <div>
                 <h3 className="text-sm font-medium text-gray-500">Absent</h3>
