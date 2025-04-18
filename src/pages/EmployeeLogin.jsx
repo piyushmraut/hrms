@@ -62,5 +62,4 @@ const EmployeeLogin = () => {
     </div>
   );
 };
-
 export default EmployeeLogin;
