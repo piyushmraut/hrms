@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
+import { useAuth } from "../context/AuthContext"; // This should now work
 import { signOut } from "firebase/auth";
 import { auth } from "../firebase";
 import {
