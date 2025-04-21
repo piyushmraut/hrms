@@ -246,7 +246,7 @@ const EmployeeSidebar = () => {
         </div>
 
         {/* User Profile Section */}
-        <div className={`p-4 flex items-center space-x-3 border-b border-indigo-700 bg-indigo-800 bg-opacity-20 backdrop-blur-sm ${isLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-500 delay-100`}>
+        {/* <div className={`p-4 flex items-center space-x-3 border-b border-indigo-700 bg-indigo-800 bg-opacity-20 backdrop-blur-sm ${isLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-500 delay-100`}>
           <div className="relative">
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 opacity-70 blur-sm animate-pulse"></div>
             <img
@@ -261,7 +261,24 @@ const EmployeeSidebar = () => {
               <p className="text-gray-300 text-sm truncate max-w-32">{currentUser?.email}</p>
             </div>
           )}
-        </div>
+        </div> */}
+        <div className={`p-4 flex items-center space-x-3 border-b border-indigo-700 bg-indigo-800 bg-opacity-20 backdrop-blur-sm ${isLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-500 delay-100`}>
+  <div className="relative">
+    <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 opacity-70 blur-sm animate-pulse"></div>
+    <img
+      src={currentUser?.photoURL || 'https://png.pngtree.com/png-clipart/20231019/original/pngtree-user-profile-avatar-png-image_13369989.png'}
+      onError={(e) => e.target.src = 'https://png.pngtree.com/png-clipart/20231019/original/pngtree-user-profile-avatar-png-image_13369989.png'}
+      alt="Profile"
+      className="relative w-10 h-10 rounded-full border-2 border-cyan-400 z-10"
+    />
+  </div>
+  {!collapsed && (
+    <div>
+      <p className="text-white font-semibold">{userName || 'Employee'}</p>
+      <p className="text-gray-300 text-sm truncate max-w-32">{currentUser?.email}</p>
+    </div>
+  )}
+</div>
 
         {/* Menu Items */}
         <div className="flex-1 overflow-y-auto scrollbar-hide">

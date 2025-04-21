@@ -115,7 +115,7 @@ const Settings = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 p-6">
-      <div className={`max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden transition-all duration-700 transform ${fadeIn ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+      <div className={`max-w-7xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden transition-all duration-700 transform ${fadeIn ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'} border border-violet-700`}>
         <div className="bg-gradient-to-r from-blue-600 to-indigo-700 p-6 flex items-center">
           <div className="h-12 w-12 rounded-full bg-white bg-opacity-20 flex items-center justify-center">
             <SettingsIcon className="h-6 w-6 text-white animate-spin-slow" />
