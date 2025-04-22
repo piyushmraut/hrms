@@ -3,8 +3,6 @@ import { Bar, Pie, Line } from 'react-chartjs-2';
 import { Chart, registerables } from 'chart.js';
 import * as XLSX from 'xlsx';
 import { saveAs } from 'file-saver';
-import jsPDF from 'jspdf';
-import 'jspdf-autotable';
 import {
   HiUser,
   HiCalendar,
@@ -40,7 +38,6 @@ const Reports = () => {
   const [payrollData, setPayrollData] = useState([]);
   const [hiringData, setHiringData] = useState([]);
   const [departments, setDepartments] = useState([]);
-  const [selectedReportFormat, setSelectedReportFormat] = useState('excel');
   const [generatedReports, setGeneratedReports] = useState([]);
 
   useEffect(() => {
@@ -362,90 +359,6 @@ const Reports = () => {
     addToReportHistory(reportTitle, 'excel');
   };
 
-  const exportToPDF = () => {
-    const filteredData = getFilteredData();
-    const doc = new jsPDF();
-    
-    const reportTitle = `${activeTab.charAt(0).toUpperCase() + activeTab.slice(1)} Report`;
-    const dateRangeText = `Date Range: ${dateRange.start} to ${dateRange.end}`;
-    const departmentText = departmentFilter === 'all' ? 'All Departments' : 
-      `Department: ${departments.find(d => d.id === departmentFilter)?.name || 'Unknown'}`;
-    
-    doc.setFontSize(18);
-    doc.text(reportTitle, 14, 20);
-    doc.setFontSize(12);
-    doc.text(dateRangeText, 14, 30);
-    doc.text(departmentText, 14, 36);
-    
-    let headers = [];
-    let rows = [];
-    
-    switch(activeTab) {
-      case 'employee':
-        headers = ['ID', 'Name', 'Department', 'Position', 'Join Date', 'Status'];
-        rows = filteredData.map(emp => [
-          emp.id,
-          emp.name,
-          departments.find(d => d.id === emp.department)?.name || 'Unknown',
-          emp.position,
-          emp.joinDate,
-          emp.status
-        ]);
-        break;
-      case 'attendance':
-        headers = ['Employee', 'Date', 'Status', 'Check In', 'Check Out'];
-        rows = filteredData.map(att => {
-          const emp = employeeData.find(e => e.id === att.employeeId);
-          return [
-            emp?.name || 'Unknown',
-            att.date,
-            att.status,
-            att.checkIn || 'N/A',
-            att.checkOut || 'N/A'
-          ];
-        });
-        break;
-      case 'payroll':
-        headers = ['Employee', 'Month', 'Basic Salary', 'Allowances', 'Deductions', 'Net Salary', 'Status'];
-        rows = filteredData.map(pay => {
-          const emp = employeeData.find(e => e.id === pay.employeeId);
-          return [
-            emp?.name || 'Unknown',
-            pay.month,
-            pay.basicSalary,
-            pay.allowances,
-            pay.deductions,
-            pay.netSalary,
-            pay.status
-          ];
-        });
-        break;
-      case 'hiring':
-        headers = ['Position', 'Department', 'Applicants', 'Interviews', 'Hired', 'Date', 'Status'];
-        rows = filteredData.map(hire => [
-          hire.position,
-          departments.find(d => d.id === hire.department)?.name || 'Unknown',
-          hire.applicants,
-          hire.interviews,
-          hire.hired,
-          hire.date,
-          hire.status
-        ]);
-        break;
-    }
-    
-    doc.autoTable({
-      startY: 50,
-      head: [headers],
-      body: rows,
-      theme: 'grid',
-      headStyles: { fillColor: [37, 99, 235], textColor: 255 }
-    });
-    
-    doc.save(`${reportTitle}.pdf`);
-    addToReportHistory(reportTitle, 'pdf');
-  };
-
   const addToReportHistory = (title, format) => {
     const newReport = {
       id: Date.now().toString(),
@@ -459,11 +372,6 @@ const Reports = () => {
       }
     };
     setGeneratedReports(prev => [newReport, ...prev]);
-  };
-
-  const handleExport = () => {
-    if (selectedReportFormat === 'excel') exportToExcel();
-    else exportToPDF();
   };
 
   const renderDataTable = () => {
@@ -831,24 +739,15 @@ const Reports = () => {
               <div>
                 <div className="flex items-center mb-1">
                   <HiDownload className="w-5 h-5 mr-2 text-gray-500" />
-                  <label className="text-sm font-medium text-gray-700">Export Options</label>
+                  <label className="text-sm font-medium text-gray-700">Export Report</label>
                 </div>
-                <div className="flex gap-4">
-                  <select
-                    className="flex-1 p-2 border rounded focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                    value={selectedReportFormat}
-                    onChange={(e) => setSelectedReportFormat(e.target.value)}
-                  >
-                    <option value="excel">Excel</option>
-                  </select>
-                  <button
-                    className="flex items-center bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded transform hover:scale-105 transition-transform"
-                    onClick={handleExport}
-                  >
-                    <HiDownload className="w-5 h-5 mr-2" />
-                    Export
-                  </button>
-                </div>
+                <button
+                  className="flex items-center bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded transform hover:scale-105 transition-transform"
+                  onClick={exportToExcel}
+                >
+                  <HiDownload className="w-5 h-5 mr-2" />
+                  Export to Excel
+                </button>
               </div>
             </div>
           </div>
