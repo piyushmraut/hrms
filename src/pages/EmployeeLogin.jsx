@@ -258,9 +258,9 @@ const EmployeeLogin = () => {
         <div
           className={`text-center pt-2 transition-all duration-700 delay-500 ${fadeIn ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}
         >
-          <p className="text-sm text-teal-500 hover:text-teal-700 transition-colors duration-300 cursor-pointer">
+          {/* <p className="text-sm text-teal-500 hover:text-teal-700 transition-colors duration-300 cursor-pointer">
             Forgot your password? Contact your admin
-          </p>
+          </p> */}
         </div>
       </div>
     </div>
