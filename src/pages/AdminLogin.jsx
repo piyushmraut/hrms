@@ -126,11 +126,6 @@ const AdminLogin = () => {
           </div>
         </form>
         
-        <div className={`text-center pt-2 transition-all duration-700 delay-500 ${fadeIn ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
-          <p className="text-sm text-indigo-500 hover:text-indigo-700 transition-colors duration-300 cursor-pointer">
-            Forgot your password? Contact system administrator
-          </p>
-        </div>
       </div>
     </div>
   );
