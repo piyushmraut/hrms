@@ -248,7 +248,7 @@ const EmployeeLogin = () => {
                     Signing in...
                   </>
                 ) : (
-                  'Sign in with Email'
+                  'Sign In'
                 )}
               </span>
             </button>
