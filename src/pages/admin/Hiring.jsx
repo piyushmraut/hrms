@@ -45,6 +45,7 @@ const Hiring = () => {
     return () => window.removeEventListener('storage', updateStats);
   }, []);
 
+  //Using switch case to handle activate Tab logic 
   const renderTabContent = () => {
     switch (activeTab) {
       case 'dashboard':
@@ -107,6 +108,7 @@ const Hiring = () => {
     tap: { scale: 0.95, transition: { duration: 0.2 } }
   };
 
+  //Return Function starts here
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50">
       {/* Top Navigation Bar */}
