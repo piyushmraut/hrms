@@ -75,7 +75,7 @@ const Payroll = () => {
     },
     exit: { opacity: 0, x: -20 }
   };
-
+// return components
   return (
     <div className="bg-gradient-to-br from-slate-50 to-slate-200 flex flex-col">
       {/* Enhanced Header */}
@@ -94,7 +94,7 @@ const Payroll = () => {
               </h2>
             </div>
             <nav className="flex px-4 sm:px-6 lg:px-8 border-t border-gray-100 overflow-x-auto bg-white/90 backdrop-blur-sm">
-            {tabs.map(tab => (
+            {tabs.map(tab => (   //button tabs which activates on hitting 
               <motion.button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
