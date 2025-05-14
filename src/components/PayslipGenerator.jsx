@@ -250,7 +250,7 @@ const PayslipGenerator = () => {
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-indigo-700">{payslip.name}</td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-indigo-700">{payslip.department}</td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-indigo-700">{payslip.period}</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-emerald-600">${payslip.netSalary.toLocaleString()}</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-emerald-600">₹{payslip.netSalary.toLocaleString()}</td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       <span className={`px-3 py-1 text-xs rounded-full font-medium ${payslip.status === 'Paid' ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-800'}`}>
                         {payslip.status}
@@ -408,23 +408,23 @@ const PayslipGenerator = () => {
                                 <tbody className="divide-y divide-indigo-50">
                                   <tr className="hover:bg-indigo-50">
                                     <td className="py-3 px-4 text-indigo-700">Basic Salary</td>
-                                    <td className="py-3 px-4 text-right font-medium text-indigo-900">${selectedPayslip.basicSalary.toLocaleString()}</td>
+                                    <td className="py-3 px-4 text-right font-medium text-indigo-900">₹{selectedPayslip.basicSalary.toLocaleString()}</td>
                                   </tr>
                                   <tr className="hover:bg-indigo-50">
                                     <td className="py-3 px-4 text-indigo-700">Allowances</td>
-                                    <td className="py-3 px-4 text-right font-medium text-indigo-900">${selectedPayslip.allowances.toLocaleString()}</td>
+                                    <td className="py-3 px-4 text-right font-medium text-indigo-900">₹{selectedPayslip.allowances.toLocaleString()}</td>
                                   </tr>
                                   <tr className="hover:bg-indigo-50">
                                     <td className="py-3 px-4 text-indigo-700">Overtime</td>
-                                    <td className="py-3 px-4 text-right font-medium text-indigo-900">${(selectedPayslip.overtime || 0).toLocaleString()}</td>
+                                    <td className="py-3 px-4 text-right font-medium text-indigo-900">₹{(selectedPayslip.overtime || 0).toLocaleString()}</td>
                                   </tr>
                                   <tr className="hover:bg-indigo-50">
                                     <td className="py-3 px-4 text-indigo-700">Bonuses</td>
-                                    <td className="py-3 px-4 text-right font-medium text-indigo-900">${(selectedPayslip.bonuses || 0).toLocaleString()}</td>
+                                    <td className="py-3 px-4 text-right font-medium text-indigo-900">₹{(selectedPayslip.bonuses || 0).toLocaleString()}</td>
                                   </tr>
                                   <tr className="bg-indigo-100">
                                     <td className="py-3 px-4 font-medium text-indigo-900">Total Earnings</td>
-                                    <td className="py-3 px-4 text-right font-bold text-indigo-900">${(selectedPayslip.basicSalary + selectedPayslip.allowances + (selectedPayslip.overtime || 0) + (selectedPayslip.bonuses || 0)).toLocaleString()}</td>
+                                    <td className="py-3 px-4 text-right font-bold text-indigo-900">₹{(selectedPayslip.basicSalary + selectedPayslip.allowances + (selectedPayslip.overtime || 0) + (selectedPayslip.bonuses || 0)).toLocaleString()}</td>
                                   </tr>
                                 </tbody>
                               </table>
@@ -448,15 +448,15 @@ const PayslipGenerator = () => {
                                 <tbody className="divide-y divide-indigo-50">
                                   <tr className="hover:bg-indigo-50">
                                     <td className="py-3 px-4 text-indigo-700">Tax</td>
-                                    <td className="py-3 px-4 text-right font-medium text-indigo-900">${selectedPayslip.tax.toLocaleString()}</td>
+                                    <td className="py-3 px-4 text-right font-medium text-indigo-900">₹{selectedPayslip.tax.toLocaleString()}</td>
                                   </tr>
                                   <tr className="hover:bg-indigo-50">
                                     <td className="py-3 px-4 text-indigo-700">Other Deductions</td>
-                                    <td className="py-3 px-4 text-right font-medium text-indigo-900">${selectedPayslip.deductions.toLocaleString()}</td>
+                                    <td className="py-3 px-4 text-right font-medium text-indigo-900">₹{selectedPayslip.deductions.toLocaleString()}</td>
                                   </tr>
                                   <tr className="bg-indigo-100">
                                     <td className="py-3 px-4 font-medium text-indigo-900">Total Deductions</td>
-                                    <td className="py-3 px-4 text-right font-bold text-indigo-900">${(selectedPayslip.tax + selectedPayslip.deductions).toLocaleString()}</td>
+                                    <td className="py-3 px-4 text-right font-bold text-indigo-900">₹{(selectedPayslip.tax + selectedPayslip.deductions).toLocaleString()}</td>
                                   </tr>
                                 </tbody>
                               </table>
@@ -473,7 +473,7 @@ const PayslipGenerator = () => {
                           <div className="flex justify-between items-center">
                             <h3 className="text-lg font-medium text-white">Net Pay</h3>
                             <div className="flex items-center">
-                              <span className="text-indigo-200 mr-2">$</span>
+                              <span className="text-indigo-200 mr-2"> ₹ </span>
                               <p className="text-3xl font-bold text-white">{selectedPayslip.netSalary.toLocaleString()}</p>
                             </div>
                           </div>

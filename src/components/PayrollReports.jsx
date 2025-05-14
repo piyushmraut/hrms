@@ -157,8 +157,8 @@ const PayrollReports = () => {
               <FiDollarSign size={18} className="text-blue-500" />
             </motion.div>
           </div>
-          <p className="text-2xl font-bold text-gray-800">$437,000</p>
-          <p className="text-xs text-gray-500 mt-1">Jan - Jun 2023</p>
+          <p className="text-2xl font-bold text-gray-800">₹437,000</p>
+          <p className="text-xs text-gray-500 mt-1">Jan - Jun 2025</p>
         </motion.div>
 
         <motion.div 
@@ -189,7 +189,7 @@ const PayrollReports = () => {
               <FiTrendingUp size={18} className="text-yellow-500" />
             </motion.div>
           </div>
-          <p className="text-2xl font-bold text-gray-800">$72,833</p>
+          <p className="text-2xl font-bold text-gray-800">₹72,833</p>
           <p className="text-xs text-yellow-500 mt-1">+3.4% since last quarter</p>
         </motion.div>
 
@@ -289,7 +289,7 @@ const PayrollReports = () => {
                       y: { 
                         beginAtZero: true, 
                         grid: { color: 'rgba(0,0,0,0.05)' },
-                        ticks: { callback: value => '$' + value.toLocaleString() } 
+                        ticks: { callback: value => '₹' + value.toLocaleString() } 
                       },
                       x: {
                         grid: { display: false }
@@ -323,11 +323,11 @@ const PayrollReports = () => {
                       transition={{ delay: index * 0.1 }}
                       className="hover:bg-blue-50 transition-colors"
                     >
-                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{month} 2023</td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 font-medium">${payrollSummaryData.datasets[0].data[index].toLocaleString()}</td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${(payrollSummaryData.datasets[0].data[index] * 0.15).toLocaleString()}</td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{month} 2025</td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 font-medium">₹{payrollSummaryData.datasets[0].data[index].toLocaleString()}</td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">₹{(payrollSummaryData.datasets[0].data[index] * 0.15).toLocaleString()}</td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{120 + index * 5}</td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${Math.round(payrollSummaryData.datasets[0].data[index] / (120 + index * 5)).toLocaleString()}</td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">₹{Math.round(payrollSummaryData.datasets[0].data[index] / (120 + index * 5)).toLocaleString()}</td>
                     </motion.tr>
                   ))}
                 </tbody>
@@ -396,11 +396,11 @@ const PayrollReports = () => {
                           <span className="text-sm font-medium text-gray-900">{dept}</span>
                         </div>
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 font-medium">${Math.round(85000 * departmentDistributionData.datasets[0].data[index] / 100).toLocaleString()}</td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 font-medium">₹{Math.round(85000 * departmentDistributionData.datasets[0].data[index] / 100).toLocaleString()}</td>
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="flex items-center">
                           <div className="w-32 bg-gray-200 rounded-full h-2.5">
-                            <div className="h-2.5 rounded-full" style={{ width: `${departmentDistributionData.datasets[0].data[index]}%`, backgroundColor: departmentDistributionData.datasets[0].backgroundColor[index] }}></div>
+                            <div className="h-2.5 rounded-full" style={{ width: `₹{departmentDistributionData.datasets[0].data[index]}%`, backgroundColor: departmentDistributionData.datasets[0].backgroundColor[index] }}></div>
                           </div>
                           <span className="ml-3 text-sm text-gray-500">{departmentDistributionData.datasets[0].data[index]}%</span>
                         </div>
@@ -431,7 +431,7 @@ const PayrollReports = () => {
                       y: { 
                         beginAtZero: true, 
                         grid: { color: 'rgba(0,0,0,0.05)' },
-                        ticks: { callback: value => '$' + value.toLocaleString() } 
+                        ticks: { callback: value => '₹' + value.toLocaleString() } 
                       },
                       x: {
                         grid: { display: false }
@@ -465,9 +465,9 @@ const PayrollReports = () => {
                   </motion.div>
                   <h3 className="text-sm font-medium text-gray-600">Total Tax Paid</h3>
                 </div>
-                <p className="text-2xl font-bold text-red-600">$63,700</p>
+                <p className="text-2xl font-bold text-red-600">₹63,700</p>
                 <p className="text-xs font-medium text-gray-500 mt-1 flex items-center">
-                  <FiCalendar size={12} className="mr-1" /> Jan - Jun 2023
+                  <FiCalendar size={12} className="mr-1" /> Jan - Jun 202
                 </p>
               </motion.div>
               
@@ -505,7 +505,7 @@ const PayrollReports = () => {
                   </motion.div>
                   <h3 className="text-sm font-medium text-gray-600">Tax Savings</h3>
                 </div>
-                <p className="text-2xl font-bold text-green-600">$8,400</p>
+                <p className="text-2xl font-bold text-green-600">₹8,400</p>
                 <p className="text-xs font-medium text-gray-500 mt-1 flex items-center">
                   <FiFilter size={12} className="mr-1" /> From deductions & benefits
                 </p>
@@ -534,13 +534,13 @@ const PayrollReports = () => {
                     >
                       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{month} 2023</td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 font-medium">
-                        ${(taxDistributionData.datasets[0].data[index] + taxDistributionData.datasets[1].data[index]).toLocaleString()}
+                        ₹{(taxDistributionData.datasets[0].data[index] + taxDistributionData.datasets[1].data[index]).toLocaleString()}
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-red-600 font-medium">${taxDistributionData.datasets[0].data[index].toLocaleString()}</td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-red-600 font-medium">₹{taxDistributionData.datasets[0].data[index].toLocaleString()}</td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                         {(taxDistributionData.datasets[0].data[index] / (taxDistributionData.datasets[0].data[index] + taxDistributionData.datasets[1].data[index]) * 100).toFixed(1)}%
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-green-600 font-medium">${taxDistributionData.datasets[1].data[index].toLocaleString()}</td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-green-600 font-medium">₹{taxDistributionData.datasets[1].data[index].toLocaleString()}</td>
                     </motion.tr>
                   ))}
                 </tbody>
@@ -597,11 +597,11 @@ const PayrollReports = () => {
                         </div>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{employee.dept}</td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700">${employee.salary.toLocaleString()}</td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${employee.allowances.toLocaleString()}</td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${employee.bonus.toLocaleString()}</td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${employee.deduction.toLocaleString()}</td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-green-600">${employee.net.toLocaleString()}</td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700">₹{employee.salary.toLocaleString()}</td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">₹{employee.allowances.toLocaleString()}</td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">₹{employee.bonus.toLocaleString()}</td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">₹{employee.deduction.toLocaleString()}</td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-green-600">₹{employee.net.toLocaleString()}</td>
                     </motion.tr>
                   ))}
                 </tbody>

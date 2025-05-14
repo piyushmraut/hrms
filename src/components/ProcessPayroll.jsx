@@ -351,11 +351,11 @@ const ProcessPayroll = () => {
                       <div className="text-sm text-gray-700">{employee.position}</div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
-                      <div className="text-sm text-gray-900">${employee.basicSalary.toLocaleString()}</div>
+                      <div className="text-sm text-gray-900">₹{employee.basicSalary.toLocaleString()}</div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       <div className="text-sm font-bold text-emerald-600">
-                        ${calculateNetSalary(employee).toLocaleString()}
+                        ₹{calculateNetSalary(employee).toLocaleString()}
                       </div>
                     </td>
                   </tr>
@@ -467,7 +467,7 @@ const ProcessPayroll = () => {
                 </h3>
                 <p className="text-emerald-700 mt-1">
                   The payroll for {processedData.employees.length} employees has
-                  been processed successfully. Total amount: $
+                  been processed successfully. Total amount: ₹
                   {processedData.totalAmount.toLocaleString()}
                 </p>
               </div>
@@ -517,7 +517,7 @@ const ProcessPayroll = () => {
                 </h3>
               </div>
               <p className="text-2xl font-bold text-emerald-600">
-                ${processedData.totalAmount.toLocaleString()}
+                ₹{processedData.totalAmount.toLocaleString()}
               </p>
             </motion.div>
           </div>
@@ -576,11 +576,11 @@ const ProcessPayroll = () => {
                       </div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
-                      <div className="text-sm text-gray-900">${employee.basicSalary.toLocaleString()}</div>
+                      <div className="text-sm text-gray-900">₹{employee.basicSalary.toLocaleString()}</div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       <div className="text-sm font-bold text-emerald-600">
-                        ${calculateNetSalary(employee).toLocaleString()}
+                        ₹{calculateNetSalary(employee).toLocaleString()}
                       </div>
                     </td>
                   </tr>

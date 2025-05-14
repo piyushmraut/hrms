@@ -16,7 +16,7 @@ const PayrollDashboard = () => {
   const stats = [
     { 
       title: 'Total Payroll This Month', 
-      value: '$85,420', 
+      value: '₹ 85,420', 
       icon: <DollarSign className={`text-indigo-600 ${animateIcons ? 'animate-bounce' : ''}`} size={24} />, 
       change: '+12% from last month',
       bgColor: 'bg-indigo-100',
@@ -43,7 +43,7 @@ const PayrollDashboard = () => {
     },
     { 
       title: 'Upcoming Payroll', 
-      value: 'Jun 30, 2023', 
+      value: 'May 30, 2025', 
       icon: <Calendar className={`text-violet-600 ${animateIcons ? 'animate-pulse' : ''}`} size={24} />, 
       change: '3 days remaining',
       bgColor: 'bg-violet-100',
@@ -53,10 +53,10 @@ const PayrollDashboard = () => {
   ];
 
   const recentActivities = [
-    { id: 1, action: 'Payroll processed for June 2023', date: 'Jun 15, 2023', user: 'Admin User', status: 'completed', icon: <CheckCircle size={16} className="text-emerald-500" /> },
-    { id: 2, action: 'Salary updated for John Doe', date: 'Jun 14, 2023', user: 'HR Manager', status: 'updated', icon: <Activity size={16} className="text-blue-500" /> },
-    { id: 3, action: 'New tax rule added', date: 'Jun 12, 2023', user: 'Finance Team', status: 'warning', icon: <AlertTriangle size={16} className="text-amber-500" /> },
-    { id: 4, action: 'Bonus paid to 25 employees', date: 'Jun 10, 2023', user: 'Admin User', status: 'notification', icon: <Bell size={16} className="text-violet-500" /> }
+    { id: 1, action: 'Payroll processed for April 2025', date: 'May 12, 2025', user: 'Admin User', status: 'completed', icon: <CheckCircle size={16} className="text-emerald-500" /> },
+    { id: 2, action: 'Salary updated for John Doe', date: 'April 14, 2025', user: 'HR Manager', status: 'updated', icon: <Activity size={16} className="text-blue-500" /> },
+    { id: 3, action: 'New tax rule added', date: 'April 12, 2025', user: 'Finance Team', status: 'warning', icon: <AlertTriangle size={16} className="text-amber-500" /> },
+    { id: 4, action: 'Bonus paid to 25 employees', date: 'April 10, 2025', user: 'Admin User', status: 'notification', icon: <Bell size={16} className="text-violet-500" /> }
   ];
 
   const payrollTrends = [

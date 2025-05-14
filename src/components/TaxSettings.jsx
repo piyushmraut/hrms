@@ -178,7 +178,7 @@ const TaxSettings = () => {
                   <label className="block text-sm font-medium text-indigo-700 mb-2 transition group-hover:text-indigo-600">Minimum Amount</label>
                   <div className="relative">
                     <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                      <FiDollarSign className="text-indigo-400" />
+                      <span className="text-indigo-400 font-semibold text-lg">₹</span>
                     </div>
                     <input 
                       type="number" 
@@ -195,7 +195,7 @@ const TaxSettings = () => {
                   <label className="block text-sm font-medium text-indigo-700 mb-2 transition group-hover:text-indigo-600">Maximum Amount</label>
                   <div className="relative">
                     <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                      <FiDollarSign className="text-indigo-400" />
+                      <span className="text-indigo-400 font-semibold text-lg">₹</span>
                     </div>
                     <input 
                       type="number" 
@@ -275,9 +275,9 @@ const TaxSettings = () => {
                       </span>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
-                      {rule.minAmount !== null ? `$${rule.minAmount.toLocaleString()}` : 'No min'} 
+                      {rule.minAmount !== null ? `₹${rule.minAmount.toLocaleString()}` : 'No min'} 
                       <span className="text-indigo-400 mx-2">to</span> 
-                      {rule.maxAmount !== null ? `$${rule.maxAmount.toLocaleString()}` : 'No max'}
+                      {rule.maxAmount !== null ? `₹${rule.maxAmount.toLocaleString()}` : 'No max'}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       <span className="px-3 py-1 inline-flex text-sm leading-5 font-medium rounded-full bg-indigo-100 text-indigo-800">
@@ -313,7 +313,7 @@ const TaxSettings = () => {
         <div className="bg-white rounded-2xl shadow-xl p-8">
           <h2 className="text-xl font-semibold text-indigo-800 mb-6 flex items-center">
             <span className="mr-2 bg-gradient-to-r from-indigo-500 to-purple-500 text-white p-2 rounded-lg">
-              <FiDollarSign />
+              <span>₹</span>
             </span>
             Tax Calculation Example
           </h2>
@@ -323,7 +323,7 @@ const TaxSettings = () => {
                 <label className="block text-sm font-medium text-indigo-700 mb-2">Annual Salary</label>
                 <div className="relative rounded-lg shadow-sm">
                   <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <FiDollarSign className="text-indigo-400" />
+                    <span className="text-indigo-400 font-semibold text-lg">₹</span>
                   </div>
                   <input 
                     type="number" 
@@ -378,7 +378,7 @@ const TaxSettings = () => {
                 <div className="bg-white p-6 rounded-lg shadow-sm border border-indigo-100">
                   <p className="text-sm font-medium text-indigo-700 mb-2">Total Estimated Tax:</p>
                   <div className="flex items-center justify-between">
-                    <p className="text-3xl font-bold text-indigo-600">${calcResult.taxAmount.toFixed(2)}</p>
+                    <p className="text-3xl font-bold text-indigo-600">₹{calcResult.taxAmount.toFixed(2)}</p>
                     <span className="bg-indigo-100 text-indigo-800 text-lg font-medium px-4 py-1 rounded-full">
                       {calcResult.totalTaxRate}%
                     </span>

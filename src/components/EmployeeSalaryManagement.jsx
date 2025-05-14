@@ -348,10 +348,10 @@ const EmployeeSalaryManagement = () => {
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600">{employee.position}</td>
                     <td className="px-6 py-4 whitespace-nowrap">
-                      <div className="text-sm text-gray-600">${employee.basicSalary.toLocaleString()}</div>
+                      <div className="text-sm text-gray-600">₹{employee.basicSalary.toLocaleString()}</div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
-                      <div className="text-sm font-medium text-green-600">${calculateNetSalary(employee).toLocaleString()}</div>
+                      <div className="text-sm font-medium text-green-600">₹{calculateNetSalary(employee).toLocaleString()}</div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                       <div className="flex gap-3">
@@ -460,7 +460,7 @@ const EmployeeSalaryManagement = () => {
                   </select>
                 </div>
                 <div className="relative">
-                  <label className="block text-sm font-medium text-indigo-700 mb-1">Basic Salary ($)</label>
+                  <label className="block text-sm font-medium text-indigo-700 mb-1">Basic Salary (₹)</label>
                   <div className="relative">
                     <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                       <FiDollarSign className="text-indigo-400" />
@@ -476,7 +476,7 @@ const EmployeeSalaryManagement = () => {
                   </div>
                 </div>
                 <div className="relative">
-                  <label className="block text-sm font-medium text-indigo-700 mb-1">Allowances ($)</label>
+                  <label className="block text-sm font-medium text-indigo-700 mb-1">Allowances (₹)</label>
                   <div className="relative">
                     <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                       <FiDollarSign className="text-indigo-400" />
@@ -492,7 +492,7 @@ const EmployeeSalaryManagement = () => {
                   </div>
                 </div>
                 <div className="relative">
-                  <label className="block text-sm font-medium text-indigo-700 mb-1">Deductions ($)</label>
+                  <label className="block text-sm font-medium text-indigo-700 mb-1">Deductions (₹)</label>
                   <div className="relative">
                     <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                       <FiDollarSign className="text-indigo-400" />
@@ -667,7 +667,7 @@ const EmployeeSalaryManagement = () => {
                   </select>
                 </div>
                 <div className="relative">
-                  <label className="block text-sm font-medium text-indigo-700 mb-1">Basic Salary ($)</label>
+                  <label className="block text-sm font-medium text-indigo-700 mb-1">Basic Salary (₹)</label>
                   <div className="relative">
                     <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                       <FiDollarSign className="text-indigo-400" />
@@ -683,7 +683,7 @@ const EmployeeSalaryManagement = () => {
                   </div>
                 </div>
                 <div className="relative">
-                  <label className="block text-sm font-medium text-indigo-700 mb-1">Allowances ($)</label>
+                  <label className="block text-sm font-medium text-indigo-700 mb-1">Allowances (₹)</label>
                   <div className="relative">
                     <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                       <FiDollarSign className="text-indigo-400" />
@@ -699,7 +699,7 @@ const EmployeeSalaryManagement = () => {
                   </div>
                 </div>
                 <div className="relative">
-                  <label className="block text-sm font-medium text-indigo-700 mb-1">Deductions ($)</label>
+                  <label className="block text-sm font-medium text-indigo-700 mb-1">Deductions (₹)</label>
                   <div className="relative">
                     <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                       <FiDollarSign className="text-indigo-400" />
